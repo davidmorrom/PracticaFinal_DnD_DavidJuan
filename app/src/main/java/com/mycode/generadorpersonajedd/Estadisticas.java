@@ -1,6 +1,9 @@
 package com.mycode.generadorpersonajedd;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +48,38 @@ public class Estadisticas extends AppCompatActivity {
         botonInteligencia = findViewById(R.id.btnInteligencia);
         botonSabiduria = findViewById(R.id.btnSabiduria);
         botonCarisma = findViewById(R.id.btnCarisma);
+        TextWatcher tWatch = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!editTextFuerza.getText().toString().isEmpty() && !editTextDestreza.getText().toString().isEmpty() && !editTextConstitucion.getText().toString().isEmpty() && !editTextInteligencia.getText().toString().isEmpty() && !editTextSabiduria.getText().toString().isEmpty() && !editTextCarisma.getText().toString().isEmpty()){
+                    int[] estadisticas = new int[6];
+                    estadisticas[0] = Integer.parseInt(editTextFuerza.getText().toString());
+                    estadisticas[1] = Integer.parseInt(editTextDestreza.getText().toString());
+                    estadisticas[2] = Integer.parseInt(editTextConstitucion.getText().toString());
+                    estadisticas[3] = Integer.parseInt(editTextInteligencia.getText().toString());
+                    estadisticas[4] = Integer.parseInt(editTextSabiduria.getText().toString());
+                    estadisticas[5] = Integer.parseInt(editTextCarisma.getText().toString());
+
+                    Intent intent = new Intent();
+                    intent.putExtra("estadisticas", estadisticas);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            }
+        };
+        editTextFuerza.addTextChangedListener(tWatch);
+        editTextDestreza.addTextChangedListener(tWatch);
+        editTextConstitucion.addTextChangedListener(tWatch);
+        editTextInteligencia.addTextChangedListener(tWatch);
+        editTextSabiduria.addTextChangedListener(tWatch);
+        editTextCarisma.addTextChangedListener(tWatch);
     }
     public void onClick(View view){
         puntuacionAleatoria(view);
@@ -115,6 +150,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgFuerza3.setImageResource(R.drawable.dado6);
                     break;
             }
+            botonFuerza.setClickable(false);
             editTextFuerza.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonDestreza) {
             switch (v1) {
@@ -177,6 +213,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgDestreza3.setImageResource(R.drawable.dado6);
                     break;
             }
+            botonDestreza.setClickable(false);
             editTextDestreza.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonConstitucion) {
             switch (v1) {
@@ -239,6 +276,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgConstitucion3.setImageResource(R.drawable.dado6);
                     break;
             }
+            botonConstitucion.setClickable(false);
             editTextConstitucion.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonInteligencia) {
             switch (v1) {
@@ -301,6 +339,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgInteligencia3.setImageResource(R.drawable.dado6);
                     break;
             }
+            botonInteligencia.setClickable(false);
             editTextInteligencia.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonSabiduria) {
             switch (v1) {
@@ -363,6 +402,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgSabiduria3.setImageResource(R.drawable.dado6);
                     break;
             }
+            botonSabiduria.setClickable(false);
             editTextSabiduria.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonCarisma) {
             switch (v1) {
@@ -425,6 +465,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgCarisma3.setImageResource(R.drawable.dado6);
                     break;
             }
+            botonCarisma.setClickable(false);
             editTextCarisma.setText(String.valueOf(v1 + v2 + v3));
         }
     }
