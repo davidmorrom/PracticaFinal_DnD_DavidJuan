@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         String nombrePersonaje = editTextNombrePersonaje.getText().toString();
         String clasePersonaje = spinnerClase.getSelectedItem().toString();
         if (!nombrePersonaje.isEmpty()) {
-            //Esto lo he hecho para ver si funcionaba pero creo que crashea
+            //Esto lo he hecho para ver si funcionaba
             Toast.makeText(this, "Prueba", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Por favor, introduce un nombre de personaje", Toast.LENGTH_SHORT).show();
