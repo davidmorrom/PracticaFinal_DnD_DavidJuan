@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Generador Personaje DnD</string>
     <string-array name="clases_dnd">
-        <item>Bardo</item>
         <item>Bárbaro</item>
+        <item>Bardo</item>
         <item>Brujo</item>
         <item>Clérigo</item>
         <item>Druida</item>
