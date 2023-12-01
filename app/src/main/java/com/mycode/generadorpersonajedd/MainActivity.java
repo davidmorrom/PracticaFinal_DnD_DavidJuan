@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private EditText editTextNombrePersonaje;
@@ -20,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         editTextNombrePersonaje = findViewById(R.id.editTextNombrePersonaje);
         spinnerClase = findViewById(R.id.spinnerClase);
-
+        String [] clases_dnd = getResources().getStringArray(R.array.clases_dnd);;
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, clases_dnd);
+        spinnerClase.setAdapter(adapter);
 
         Button botonCrearPersonaje = findViewById(R.id.botonCrearPersonaje);
         botonCrearPersonaje.setOnClickListener(new View.OnClickListener() {
