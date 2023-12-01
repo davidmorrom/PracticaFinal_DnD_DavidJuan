@@ -1,4 +1,12 @@
 package com.mycode.generadorpersonajedd;
 
-public class Estadisticas {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Estadisticas extends AppCompatActivity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_estadisticas);
+    }
 }

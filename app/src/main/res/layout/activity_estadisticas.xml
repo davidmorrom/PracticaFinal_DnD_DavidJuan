@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -12,19 +13,39 @@
 
         <TextView
             android:id="@+id/txtFuerza"
-            android:layout_width="194dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="FUERZA"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgFuerza1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgFuerza2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgFuerza3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
 
         <EditText
             android:id="@+id/edtFuerza"
-            android:layout_width="61dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="1dp"
-            android:layout_weight="1"
             android:ems="10"
             android:hint="X"
             android:inputType="text"
@@ -34,8 +55,7 @@
             android:id="@+id/btnFuerza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:text="Generar"/>
     </LinearLayout>
 
     <LinearLayout
@@ -46,23 +66,49 @@
 
         <TextView
             android:id="@+id/txtDestreza"
-            android:layout_width="194dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="DESTREZA"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/imgDestreza1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgDestreza2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgDestreza3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
 
         <EditText
             android:id="@+id/edtDestreza"
-            android:layout_width="63dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="95dp"
+            android:layout_marginBottom="1dp"
             android:ems="10"
             android:hint="X"
             android:inputType="text"
             android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnDestreza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generar" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,18 +119,38 @@
 
         <TextView
             android:id="@+id/txtConstitucion"
-            android:layout_width="194dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CONSTITUCION"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgConstitucion1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgConstitucion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgConstitucion3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
 
         <EditText
             android:id="@+id/edtConsitucion"
-            android:layout_width="61dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="1dp"
             android:ems="10"
             android:hint="X"
@@ -95,8 +161,7 @@
             android:id="@+id/btnConstitucion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:text="Generar" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,23 +172,48 @@
 
         <TextView
             android:id="@+id/txtInteligencia"
-            android:layout_width="194dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="INTELIGENCIA"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgInteligencia1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgInteligencia2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgInteligencia3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
 
         <EditText
             android:id="@+id/edtInteligencia"
-            android:layout_width="63dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="95dp"
             android:ems="10"
             android:hint="X"
             android:inputType="text"
             android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnInteligencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generar" />
     </LinearLayout>
 
     <LinearLayout
@@ -134,18 +224,39 @@
 
         <TextView
             android:id="@+id/txtSabiduria"
-            android:layout_width="194dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SABIDURIA"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgSabiduria1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgSabiduria2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgSabiduria3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
 
         <EditText
             android:id="@+id/edtSabiduria"
-            android:layout_width="61dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_marginBottom="1dp"
             android:ems="10"
             android:hint="X"
             android:inputType="text"
@@ -155,8 +266,7 @@
             android:id="@+id/btnSabiduria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:text="Generar" />
     </LinearLayout>
 
     <LinearLayout
@@ -167,18 +277,38 @@
 
         <TextView
             android:id="@+id/txtCarisma"
-            android:layout_width="194dp"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CARISMA"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/imgCarisma1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgCarisma2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
+
+        <ImageView
+            android:id="@+id/imgCarisma3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/dado1" />
 
         <EditText
             android:id="@+id/edtCarisma"
-            android:layout_width="61dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="1dp"
             android:ems="10"
             android:hint="X"
@@ -189,7 +319,6 @@
             android:id="@+id/btnCarisma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
+            android:text="Generar" />
     </LinearLayout>
 </LinearLayout>
