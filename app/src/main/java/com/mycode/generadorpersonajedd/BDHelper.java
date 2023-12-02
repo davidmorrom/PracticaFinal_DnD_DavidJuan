@@ -33,5 +33,11 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Personajes");
         onCreate(db);
     }
+    public SQLiteDatabase getBDWriteable(){
+        return getWritableDatabase();
+    }
+    public SQLiteDatabase getBDReadable(){
+        return getReadableDatabase();
+    }
 
 }
