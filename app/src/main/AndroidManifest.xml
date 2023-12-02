@@ -26,6 +26,10 @@
             android:name=".Estadisticas"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".Habilidades"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
