@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int[] imagenes_dnd;
     private int[] estadisticas = new int[6];
-    private String skills;
+    private String skills="";
     private String playerName;
     private Button botonGuardar, botonEstadisticas, botonHabilidades;
     private BDHelper BDHelper;
@@ -98,8 +98,10 @@ public class MainActivity extends AppCompatActivity {
             values.put("Sabiduria", estadisticas[4]);
             values.put("Carisma", estadisticas[5]);
             values.put("Habilidades", skills.toString());
+
             SQLiteDatabase database = BDHelper.getBDWriteable();
             long newRowId = database.insert("Personajes", null, values);
+
             Toast.makeText(this, "Se ha introducido con exito", Toast.LENGTH_SHORT).show();
             editTextNombrePersonaje.setText("");
             spinnerClase.setSelection(0);
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void actualizarBoton() {
-        if (!skills.isEmpty() && estadisticas[0] != 0 && estadisticas[1] != 0 && estadisticas[2] != 0 && estadisticas[3] != 0 && estadisticas[4] != 0 && estadisticas[5] != 0) {
+        if (!skills.equals("") && estadisticas[0] != 0 && estadisticas[1] != 0 && estadisticas[2] != 0 && estadisticas[3] != 0 && estadisticas[4] != 0 && estadisticas[5] != 0) {
             botonGuardar.setEnabled(true);
         }
     }
