@@ -153,7 +153,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgFuerza3.setImageResource(R.drawable.dado6);
                     break;
             }
-            botonFuerza.setClickable(false);
+            botonFuerza.setEnabled(false);
             editTextFuerza.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonDestreza) {
             switch (v1) {
@@ -216,7 +216,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgDestreza3.setImageResource(R.drawable.dado6);
                     break;
             }
-            botonDestreza.setClickable(false);
+            botonDestreza.setEnabled(false);
             editTextDestreza.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonConstitucion) {
             switch (v1) {
@@ -279,7 +279,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgConstitucion3.setImageResource(R.drawable.dado6);
                     break;
             }
-            botonConstitucion.setClickable(false);
+            botonConstitucion.setEnabled(false);
             editTextConstitucion.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonInteligencia) {
             switch (v1) {
@@ -342,7 +342,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgInteligencia3.setImageResource(R.drawable.dado6);
                     break;
             }
-            botonInteligencia.setClickable(false);
+            botonInteligencia.setEnabled(false);
             editTextInteligencia.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonSabiduria) {
             switch (v1) {
@@ -405,7 +405,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgSabiduria3.setImageResource(R.drawable.dado6);
                     break;
             }
-            botonSabiduria.setClickable(false);
+            botonSabiduria.setEnabled(false);
             editTextSabiduria.setText(String.valueOf(v1 + v2 + v3));
         } else if (view == botonCarisma) {
             switch (v1) {
@@ -468,7 +468,7 @@ public class Estadisticas extends AppCompatActivity {
                     imgCarisma3.setImageResource(R.drawable.dado6);
                     break;
             }
-            botonCarisma.setClickable(false);
+            botonCarisma.setEnabled(false);
             editTextCarisma.setText(String.valueOf(v1 + v2 + v3));
         }
     }

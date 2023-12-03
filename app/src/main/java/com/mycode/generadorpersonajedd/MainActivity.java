@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
             skills = "";
             estadisticas = new int[6];
             botonGuardar.setEnabled(false);
+            botonEstadisticas.setEnabled(true);
+            botonHabilidades.setEnabled(true);
         } else {
             Toast.makeText(this, "Por favor, introduce un nombre de personaje", Toast.LENGTH_SHORT).show();
         }
@@ -162,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 estadisticas = (int[]) result.getData().getExtras().get("estadisticas");
             }
             actualizarBoton();
+            botonEstadisticas.setEnabled(false);
         }
     });
     ActivityResultLauncher<Intent> startForResultHabil = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -171,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 skills = (String) result.getData().getExtras().get("Skills-selecionadas");
             }
             actualizarBoton();
+            botonHabilidades.setEnabled(false);
         }
     });
 }
