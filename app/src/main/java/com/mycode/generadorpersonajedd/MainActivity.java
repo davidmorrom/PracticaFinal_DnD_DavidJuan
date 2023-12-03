@@ -1,5 +1,9 @@
 package com.mycode.generadorpersonajedd;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button botonGuardar, botonEstadisticas, botonHabilidades;
     private BDHelper BDHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         botonGuardar.setActivated(false);
         clases_dnd = getResources().getStringArray(R.array.clases_dnd);
-        imagenes_dnd = new int[]{
-                R.drawable.barbaro, R.drawable.bardo, R.drawable.brujo, R.drawable.clerigo, R.drawable.druida, R.drawable.explorador, R.drawable.guerrero, R.drawable.hechicero, R.drawable.mago, R.drawable.monje, R.drawable.paladin, R.drawable.picaro
-        };
+        imagenes_dnd = new int[]{R.drawable.barbaro, R.drawable.bardo, R.drawable.brujo, R.drawable.clerigo, R.drawable.druida, R.drawable.explorador, R.drawable.guerrero, R.drawable.hechicero, R.drawable.mago, R.drawable.monje, R.drawable.paladin, R.drawable.picaro};
 
         editTextNombrePersonaje = findViewById(R.id.editTextNombrePersonaje);
         spinnerClase = findViewById(R.id.spinnerClase);
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 elegirHabilidades();
-                actualizarBoton();
+
             }
         });
         Button botonEstadisticas = findViewById(R.id.botonEstadisticas);
@@ -72,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ponerEstadisticas();
-                actualizarBoton();
             }
         });
+
     }
 
     public void crearPersonaje() {
@@ -106,13 +109,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void elegirHabilidades() {
-        Intent intent = getIntent();
-        skills = (ArrayList<String>) intent.getExtras().get("Skills-selecionadas");
+        Intent intent = new Intent(this, Habilidades.class);
+        startForResultHabil.launch(intent);
+        actualizarBoton();
     }
 
     public void ponerEstadisticas() {
-        Intent intent = getIntent();
-        estadisticas = (int[]) intent.getExtras().get("estadisticas");
+        Intent intent = new Intent(this, Estadisticas.class);
+        startForResultEstats.launch(intent);
+        actualizarBoton();
     }
 
     public void actualizarBoton() {
@@ -148,5 +153,22 @@ public class MainActivity extends AppCompatActivity {
             return convertView;
         }
     }
+
+    ActivityResultLauncher<Intent> startForResultEstats = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result.getResultCode() == RESULT_OK) {
+                estadisticas = (int[]) result.getData().getExtras().get("estadisticas");
+            }
+        }
+    });
+    ActivityResultLauncher<Intent> startForResultHabil = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result.getResultCode() == RESULT_OK) {
+                skills = (ArrayList<String>) result.getData().getExtras().get("Skills-selecionadas");
+            }
+        }
+    });
 }
 

@@ -44,13 +44,13 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    ActivityResultLauncher <Intent> mainActivityLauncher = registerForActivityResult(
-        new ActivityResultContracts.StartActivityForResult(),
-        new ActivityResultCallback<ActivityResult>() {
-            @Override
-            public void onActivityResult(ActivityResult o) {
-                playerNameEditText.setText("");
+    ActivityResultLauncher<Intent> mainActivityLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult o) {
+                    playerNameEditText.setText("");
+                }
             }
-        }
     );
 }

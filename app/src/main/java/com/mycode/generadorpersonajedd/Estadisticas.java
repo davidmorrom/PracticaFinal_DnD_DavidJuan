@@ -15,6 +15,7 @@ public class Estadisticas extends AppCompatActivity {
     ImageView imgFuerza1, imgFuerza2, imgFuerza3, imgDestreza1, imgDestreza2, imgDestreza3, imgConstitucion1, imgConstitucion2, imgConstitucion3, imgInteligencia1, imgInteligencia2, imgInteligencia3, imgSabiduria1, imgSabiduria2, imgSabiduria3, imgCarisma1, imgCarisma2, imgCarisma3;
     EditText editTextFuerza, editTextDestreza, editTextConstitucion, editTextInteligencia, editTextSabiduria, editTextCarisma;
     Button botonFuerza, botonDestreza, botonConstitucion, botonInteligencia, botonSabiduria, botonCarisma;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estadisticas);
@@ -52,13 +53,14 @@ public class Estadisticas extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (!editTextFuerza.getText().toString().isEmpty() && !editTextDestreza.getText().toString().isEmpty() && !editTextConstitucion.getText().toString().isEmpty() && !editTextInteligencia.getText().toString().isEmpty() && !editTextSabiduria.getText().toString().isEmpty() && !editTextCarisma.getText().toString().isEmpty()){
+                if (!editTextFuerza.getText().toString().isEmpty() && !editTextDestreza.getText().toString().isEmpty() && !editTextConstitucion.getText().toString().isEmpty() && !editTextInteligencia.getText().toString().isEmpty() && !editTextSabiduria.getText().toString().isEmpty() && !editTextCarisma.getText().toString().isEmpty()) {
                     int[] estadisticas = new int[6];
                     estadisticas[0] = Integer.parseInt(editTextFuerza.getText().toString());
                     estadisticas[1] = Integer.parseInt(editTextDestreza.getText().toString());
@@ -81,7 +83,8 @@ public class Estadisticas extends AppCompatActivity {
         editTextSabiduria.addTextChangedListener(tWatch);
         editTextCarisma.addTextChangedListener(tWatch);
     }
-    public void onClick(View view){
+
+    public void onClick(View view) {
         puntuacionAleatoria(view);
     }
 
