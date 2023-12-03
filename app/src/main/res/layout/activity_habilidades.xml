@@ -1,181 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
-        android:layout_width="379dp"
-        android:layout_height="652dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="108dp"
-            android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkBoxAtletimo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Atletismo" />
 
-            <CheckBox
-                android:id="@+id/checkBoxAtletimo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Atletismo" />
+        <CheckBox
+            android:id="@+id/checkBoxAcrobacias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Acrobacias" />
 
-            <CheckBox
-                android:id="@+id/checkBoxAcrobacias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Acrobacias" />
-
-            <CheckBox
-                android:id="@+id/checkBoxJuego"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Juegos de Manos" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBoxSigilo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Sigilo" />
-
-            <CheckBox
-                android:id="@+id/checkBoxAracano"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Arcano" />
-
-            <CheckBox
-                android:id="@+id/checkBoxHistoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Historia" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="118dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBoxInvs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Investigacion" />
-
-            <CheckBox
-                android:id="@+id/checkBoxNaturaleza"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Naturaleza" />
-
-            <CheckBox
-                android:id="@+id/checkBoxReligion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Religion" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="107dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBoxMedicina"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Medicina" />
-
-            <CheckBox
-                android:id="@+id/checkBoxPercepcion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Percepcion" />
-
-            <CheckBox
-                android:id="@+id/checkBoxPerspicacia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Perspicacia" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="111dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBoxSuper"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Supervivencia" />
-
-            <CheckBox
-                android:id="@+id/checkBoxTrato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Trato con Animales" />
-
-            <CheckBox
-                android:id="@+id/checkBoxEngaño"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Engaño" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="111dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBoxIntimidacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Intimidación" />
-
-            <CheckBox
-                android:id="@+id/checkBoxInterpretacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Interpretacion" />
-
-            <CheckBox
-                android:id="@+id/checkBoxPersuasion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Persuasion" />
-        </LinearLayout>
-
+        <CheckBox
+            android:id="@+id/checkBoxJuego"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Juegos de Manos" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxSigilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sigilo" />
+
+        <CheckBox
+            android:id="@+id/checkBoxAracano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Arcano" />
+
+        <CheckBox
+            android:id="@+id/checkBoxHistoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Historia" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxInvs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Investigacion" />
+
+        <CheckBox
+            android:id="@+id/checkBoxNaturaleza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Naturaleza" />
+
+        <CheckBox
+            android:id="@+id/checkBoxReligion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Religion" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxMedicina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Medicina" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPercepcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Percepcion" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPerspicacia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Perspicacia" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxSuper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Supervivencia" />
+
+        <CheckBox
+            android:id="@+id/checkBoxTrato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Trato con Animales" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEngaño"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Engaño" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxIntimidacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Intimidación" />
+
+        <CheckBox
+            android:id="@+id/checkBoxInterpretacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Interpretacion" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPersuasion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Persuasion" />
+    </LinearLayout>
+
+</LinearLayout>
