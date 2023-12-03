@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        BDHelper = new BDHelper(this, "Personajes", null, 1);
         Intent intent = getIntent();
         playerName = intent.getStringExtra("playerName");
 
@@ -98,8 +98,7 @@ public class MainActivity extends AppCompatActivity {
             values.put("Sabiduria", estadisticas[4]);
             values.put("Carisma", estadisticas[5]);
             values.put("Habilidades", skills.toString());
-            SQLiteDatabase database = BDHelper.getBDWriteable();
-            long newRowId = database.insert("Personajes", null, values);
+            long newRowId = BDHelper.insert("Personajes", null, values);
             Toast.makeText(this, "Se ha introducido con exito", Toast.LENGTH_SHORT).show();
             editTextNombrePersonaje.setText("");
             spinnerClase.setSelection(0);

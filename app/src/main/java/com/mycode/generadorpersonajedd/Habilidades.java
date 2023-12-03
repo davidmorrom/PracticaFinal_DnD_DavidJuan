@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Habilidades extends AppCompatActivity {
     private ArrayList<CheckBox> checkBoxes;
     private ArrayList<String> skills;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habilidades);
@@ -42,19 +43,25 @@ public class Habilidades extends AppCompatActivity {
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                    int cont = 0;
                     if (isChecked) {
                         skills.add(compoundButton.getText().toString());
-                    }
-                    else {
+                    } else {
                         skills.remove(compoundButton.getText().toString());
                     }
                     if (skills.size() == 3) {
-                        String skillsSelecionadas= "";
+                        char c = '"';
+                        String skillsSelecionadas = "";
+                        skillsSelecionadas += c;
                         for (String skill : skills) {
-                            skillsSelecionadas += "\"" + skill + "\", ";
+                            cont++;
+                            if (cont < 3) {
+                                skillsSelecionadas += skill + ", ";
+                            } else if (cont == 3) {
+                                skillsSelecionadas += "y " + skill;
+                            }
                         }
-                        skillsSelecionadas = skillsSelecionadas.substring(0, skillsSelecionadas.length() - 2);
-                        skillsSelecionadas += " y " + skills.get(skills.size() - 1);
+                        skillsSelecionadas += c;
                         Intent intent = new Intent();
                         intent.putExtra("Skills-selecionadas", skillsSelecionadas);
                         setResult(RESULT_OK, intent);

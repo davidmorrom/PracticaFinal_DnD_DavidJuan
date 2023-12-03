@@ -1,5 +1,6 @@
 package com.mycode.generadorpersonajedd;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -42,4 +43,10 @@ public class BDHelper extends SQLiteOpenHelper {
         return getReadableDatabase();
     }
 
+    public long insert(String personajes, Object o, ContentValues values) {
+        SQLiteDatabase db = getBDWriteable();
+        char c = '"';
+        db.execSQL("INSERT INTO Personajes(NombreJugador, NombrePersonaje, Clase, Fuerza, Destreza, Constitucion, Inteligencia, Sabiduria, Carisma, Habilidades) VALUES ("+c+values.get("NombreJugador")+c+","+c+values.get("NombrePersonaje")+c+","+c+values.get("Clase")+c+","+c+values.get("Fuerza")+c+","+c+values.get("Destreza")+c+","+c+values.get("Constitucion")+c+","+c+values.get("Inteligencia")+c+","+c+values.get("Sabiduria")+c+","+c+values.get("Carisma")+c+","+values.get("Habilidades")+")");
+        return getBDWriteable().insert(personajes, null, values);
+    }
 }
