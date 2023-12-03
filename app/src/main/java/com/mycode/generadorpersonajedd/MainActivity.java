@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int[] imagenes_dnd;
     private int[] estadisticas = new int[6];
-    private String skills;
+    private String skills="";
     private String playerName;
     private Button botonGuardar, botonEstadisticas, botonHabilidades;
     private BDHelper BDHelper;
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void actualizarBoton() {
-        if (!skills.isEmpty() && estadisticas[0] != 0 && estadisticas[1] != 0 && estadisticas[2] != 0 && estadisticas[3] != 0 && estadisticas[4] != 0 && estadisticas[5] != 0) {
+        if (!skills.equals("") && estadisticas[0] != 0 && estadisticas[1] != 0 && estadisticas[2] != 0 && estadisticas[3] != 0 && estadisticas[4] != 0 && estadisticas[5] != 0) {
             botonGuardar.setEnabled(true);
         }
     }
