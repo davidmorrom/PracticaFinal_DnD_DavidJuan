@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextNombrePersonaje;
     private Spinner spinnerClase;
     private String[] clases_dnd;
-    ;
+
     private int[] imagenes_dnd;
     private int[] estadisticas = new int[6];
-    private ArrayList<String> skills = new ArrayList<>();
-
+    private String skills;
+    private String playerName;
     private Button botonGuardar, botonEstadisticas, botonHabilidades;
     private BDHelper BDHelper;
 
@@ -42,11 +42,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+        playerName = intent.getStringExtra("playerName");
+
         botonGuardar = findViewById(R.id.botonCrearPersonaje);
         botonEstadisticas = findViewById(R.id.botonEstadisticas);
         botonHabilidades = findViewById(R.id.botonHabilidades);
 
-        botonGuardar.setActivated(false);
+        botonGuardar.setEnabled(false);
         clases_dnd = getResources().getStringArray(R.array.clases_dnd);
         imagenes_dnd = new int[]{R.drawable.barbaro, R.drawable.bardo, R.drawable.brujo, R.drawable.clerigo, R.drawable.druida, R.drawable.explorador, R.drawable.guerrero, R.drawable.hechicero, R.drawable.mago, R.drawable.monje, R.drawable.paladin, R.drawable.picaro};
 
@@ -85,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         String clasePersonaje = spinnerClase.getSelectedItem().toString().trim();
         if (!nombrePersonaje.isEmpty()) {
             ContentValues values = new ContentValues();
-            values.put("NombreJugador", nombrePersonaje);
+            values.put("NombreJugador", playerName);
             values.put("NombrePersonaje", nombrePersonaje);
             values.put("Clase", clasePersonaje);
             values.put("Fuerza", estadisticas[0]);
@@ -100,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Se ha introducido con exito", Toast.LENGTH_SHORT).show();
             editTextNombrePersonaje.setText("");
             spinnerClase.setSelection(0);
-            skills.clear();
+            skills = "";
             estadisticas = new int[6];
-            botonGuardar.setActivated(false);
+            botonGuardar.setEnabled(false);
         } else {
             Toast.makeText(this, "Por favor, introduce un nombre de personaje", Toast.LENGTH_SHORT).show();
         }
@@ -111,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
     public void elegirHabilidades() {
         Intent intent = new Intent(this, Habilidades.class);
         startForResultHabil.launch(intent);
-        actualizarBoton();
     }
 
     public void ponerEstadisticas() {
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void actualizarBoton() {
         if (!skills.isEmpty() && estadisticas[0] != 0 && estadisticas[1] != 0 && estadisticas[2] != 0 && estadisticas[3] != 0 && estadisticas[4] != 0 && estadisticas[5] != 0) {
-            botonGuardar.setActivated(true);
+            botonGuardar.setEnabled(true);
         }
     }
 
@@ -160,14 +162,16 @@ public class MainActivity extends AppCompatActivity {
             if (result.getResultCode() == RESULT_OK) {
                 estadisticas = (int[]) result.getData().getExtras().get("estadisticas");
             }
+            actualizarBoton();
         }
     });
     ActivityResultLauncher<Intent> startForResultHabil = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
             if (result.getResultCode() == RESULT_OK) {
-                skills = (ArrayList<String>) result.getData().getExtras().get("Skills-selecionadas");
+                skills = (String) result.getData().getExtras().get("Skills-selecionadas");
             }
+            actualizarBoton();
         }
     });
 }

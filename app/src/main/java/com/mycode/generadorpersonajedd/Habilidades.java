@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class Habilidades extends AppCompatActivity {
     private ArrayList<CheckBox> checkBoxes;
     private ArrayList<String> skills;
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habilidades);
@@ -45,12 +44,19 @@ public class Habilidades extends AppCompatActivity {
                 public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                     if (isChecked) {
                         skills.add(compoundButton.getText().toString());
-                    } else {
+                    }
+                    else {
                         skills.remove(compoundButton.getText().toString());
                     }
                     if (skills.size() == 3) {
+                        String skillsSelecionadas= "";
+                        for (String skill : skills) {
+                            skillsSelecionadas += "\"" + skill + "\", ";
+                        }
+                        skillsSelecionadas = skillsSelecionadas.substring(0, skillsSelecionadas.length() - 2);
+                        skillsSelecionadas += " y " + skills.get(skills.size() - 1);
                         Intent intent = new Intent();
-                        intent.putExtra("Skills-selecionadas", skills);
+                        intent.putExtra("Skills-selecionadas", skillsSelecionadas);
                         setResult(RESULT_OK, intent);
                         finish();
                     }
